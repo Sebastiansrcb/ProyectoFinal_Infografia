@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://karateka.gd" type="Script" id=1]
 [ext_resource path="res://sprites con cocacola/front1.png" type="Texture" id=2]
@@ -48,6 +48,9 @@
 [ext_resource path="res://sprites con cocacola/roll9.png" type="Texture" id=46]
 [ext_resource path="res://sprites con cocacola/roll7.png" type="Texture" id=47]
 [ext_resource path="res://sprites con cocacola/roll6.png" type="Texture" id=48]
+
+[sub_resource type="AnimationRootNode" id=8]
+resource_local_to_scene = true
 
 [sub_resource type="Animation" id=1]
 resource_name = "Caminar"
@@ -167,6 +170,8 @@ texture = ExtResource( 2 )
 scale = Vector2( 80, 80 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Caminar = SubResource( 1 )
